@@ -1,6 +1,6 @@
 {
   "name": "use-dice",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "React hook for rolling dices",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
