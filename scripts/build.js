@@ -1,12 +1,11 @@
 import { build } from 'esbuild'
-import pkg from '../package.json' assert { type: 'json' }
 
 const entryFile = './src/index.tsx'
 const shared = {
   bundle: true,
   entryPoints: [entryFile],
   logLevel: 'info',
-  external: [...Object.keys(pkg.peerDependencies)],
+  external: ['react'],
   minify: true,
   sourcemap: true,
 }

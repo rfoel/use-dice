@@ -1,17 +1,23 @@
 import { useState } from 'react'
 
+import Dice from './Dice'
+
 export type DiceOptions = {
   timeout?: number
 }
 
-const getRandomDiceValue = () => Math.floor(Math.random() * 6 + 1)
+export type DiceValue = 1 | 2 | 3 | 4 | 5 | 6
+
+export const getRandomDiceValue = () =>
+  Math.floor(Math.random() * 6 + 1) as DiceValue
 
 export default ({ timeout = 0 }: DiceOptions) => {
   const [isRolling, setIsRolling] = useState(false)
-  const [value, setValue] = useState<number | null>()
+  const [value, setValue] = useState<DiceValue | null>(null)
 
   const roll = () => {
     setIsRolling(true)
+    setValue(null)
     new Promise((resolve) => setTimeout(resolve, timeout)).then(() => {
       setValue(getRandomDiceValue())
       setIsRolling(false)
@@ -20,3 +26,5 @@ export default ({ timeout = 0 }: DiceOptions) => {
 
   return { isRolling, value, roll }
 }
+
+export { Dice }

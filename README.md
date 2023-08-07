@@ -4,7 +4,7 @@
 
 [![npm](https://nodei.co/npm/use-dice.png)](https://www.npmjs.com/package/use-dice)
 
-> React hook for rolling dices.
+> React hook and optional component for rolling dices.
 
 ## Installation
 
@@ -15,14 +15,15 @@ npm install use-dice
 ## Usage
 
 ```jsx
-import useDice from 'use-dice'
+import useDice, { Dice } from 'use-dice'
 
 function App() {
   const { isRolling, value, roll } = useDice({ timeout: 1000 })
 
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
       <h1>Dice value: {isRolling ? 'dice is rolling' : value}</h1>
+      <Dice value={value} isRolling={isRolling} />
       <button onClick={roll} type="button">
         Roll dice
       </button>
@@ -33,6 +34,12 @@ function App() {
 export default App
 ```
 
+## Options
+
+| Name    | Description                                                        | Default |
+| ------- | ------------------------------------------------------------------ | ------- |
+| timeout | Timeout for `roll` function return a value, useful for animations. | 0       |
+
 ## Hook
 
 | Name      | Description                                                        | Default |
@@ -41,12 +48,12 @@ export default App
 | value     | Last dice rolled value                                             |         |
 | isRolling | Returns `true` within the `timeout` option, useful for animations. | false   |
 
-## Options
+## Component
 
 | Name      | Description                                                        | Default |
 | --------- | ------------------------------------------------------------------ | ------- |
-| timeout   | Timeout for `roll` function return a value, useful for animations. | 0       |
-| isRolling | Returns `true` within the timeout, useful for animations.          | false   |
+| value     | Last dice rolled value                                             |         |
+| isRolling | Returns `true` within the `timeout` option, useful for animations. | false   |
 
 ## Contributing
 
