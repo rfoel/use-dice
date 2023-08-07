@@ -1,0 +1,46 @@
+{
+  "name": "use-dice",
+  "version": "0.0.0",
+  "description": "React hook for rolling dices",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "postbuild": "tsc --emitDeclarationOnly --outDir dist",
+    "prebuild": "rimraf dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "react",
+    "react-hook",
+    "react-dice",
+    "dice"
+  ],
+  "author": "Rafael Franco",
+  "license": "MIT",
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^10.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.0.4",
+    "@semantic-release/npm": "^10.0.4",
+    "@semantic-release/release-notes-generator": "^11.0.4",
+    "@types/react": "^18.2.18",
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
+    "esbuild": "^0.18.19",
+    "eslint": "^8.46.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.0.1",
+    "rimraf": "^5.0.1",
+    "semantic-release": "^21.0.7",
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.6"
+  },
+  "peerDependencies": {
+    "react": ">= 16.0.0"
+  }
+}
