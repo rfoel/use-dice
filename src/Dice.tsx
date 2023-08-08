@@ -77,7 +77,7 @@ const Dice = ({
   value,
   isRolling,
 }: {
-  value: DiceValue
+  value: DiceValue | null
   isRolling: boolean
 }) => {
   return (
